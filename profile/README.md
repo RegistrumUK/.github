@@ -75,6 +75,17 @@ When accounts are a flat or scanned PDF with no structured data behind them, you
 interpret. That happens more than people expect: **Tesco PLC's own latest accounts return
 `image_pdf`.**
 
+### Ownership, resolved rather than returned
+
+A PSC register tells you the immediate controlling parties. When one of those is itself a
+company — which, for anything with a corporate structure, it usually is — the register hands
+you another company number and stops. Walking that up to real people is the actual job.
+
+`/company/{n}/psc/chain` does that traversal and returns a **tree**, not a flat list, with each
+branch marked as terminal and a reason why it terminated: a natural person, a foreign entity
+outside the UK register, or a depth limit you set. You can also resolve a company by name
+first — `/search` — so a list of counterparty names is a usable input, not a blocker.
+
 ### The counter-argument to "we don't refine anything"
 
 Some tools deliberately return raw filing bytes and call unrefined data a feature — no parser
