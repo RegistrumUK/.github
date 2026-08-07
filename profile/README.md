@@ -18,6 +18,27 @@ become a customer.** Two of them don't mention our API until the last section, o
 
 ---
 
+## Try it right now, without an account
+
+Point any MCP client at this URL. No signup, no API key, no install:
+
+```
+https://registrum.co.uk/api/mcp
+```
+
+```json
+{ "mcpServers": { "registrum": { "url": "https://registrum.co.uk/api/mcp" } } }
+```
+
+Then ask it *"Who ultimately owns Rolls-Royce Holdings?"* and it will trace the ownership chain
+through the corporate PSCs to the natural persons at the top.
+
+The anonymous tier is generous on everyday lookups and deliberately small on the expensive ones
+— a couple of ownership traces and sets of parsed accounts a day, which is enough to judge the
+data before you decide anything. Caps announce themselves; nothing silently degrades.
+
+---
+
 ## Start here
 
 | Repo | What it is | Use it when |
@@ -25,7 +46,7 @@ become a customer.** Two of them don't mention our API until the last section, o
 | [**companies-house-api-python-starter**](https://github.com/RegistrumUK/companies-house-api-python-starter) | One-file Python client for the **official free CH API** | You want to call Companies House directly and not fall into the usual four traps |
 | [**companies-house-api-node-starter**](https://github.com/RegistrumUK/companies-house-api-node-starter) | Same, in Node, using built-in `fetch` | As above, on the JS side |
 | [**registrum-mcp-examples**](https://github.com/RegistrumUK/registrum-mcp-examples) | Prompt cookbook + runnable MCP client scripts | You're wiring UK company data into Claude, Cursor, or your own agent |
-| [**@registrum/mcp**](https://github.com/vdmeu/registrum-mcp) | The MCP server itself (npm, MIT) | You want the 8 tools in your agent in one line of config |
+| [**@registrum/mcp**](https://github.com/vdmeu/registrum-mcp) | The MCP server itself (npm, MIT) | You want the tools in your agent — hosted (no key) or self-hosted with your own |
 
 The two starter kits are deliberately **honest wrappers around the free official API**. They
 hide nothing and they don't need us. If the raw register is all you need, use them and go.
@@ -142,8 +163,9 @@ the wrong tool and we'd rather say so here than waste your afternoon.
 
 ## Try it
 
-- **Free tier, no card:** [registrum.co.uk](https://registrum.co.uk) — 50 calls/month
-- **Browse with no key at all:** any company page on [registrum.co.uk](https://registrum.co.uk)
+- **Hosted MCP, no account at all:** `https://registrum.co.uk/api/mcp`
+- **Browse with no key at all:** any company page on [registrum.co.uk](https://registrum.co.uk/?utm_source=github&utm_campaign=org)
+- **Free API key, no card:** [registrum.co.uk](https://registrum.co.uk/?utm_source=github&utm_campaign=org) — for when the anonymous caps get in your way
 - **API reference:** [api.registrum.co.uk/docs](https://api.registrum.co.uk/docs)
 - **Live plans and limits:** [`GET /v1/plans`](https://api.registrum.co.uk/v1/plans) — the
   authoritative source; we don't restate prices in docs, because they drift
