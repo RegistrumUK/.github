@@ -119,6 +119,19 @@ the parsing risk, and do they tell you when it fails.** Our answer is: we do, an
 `completeness`, `missing_fields` and `taxonomy_version` ship on every response so you can set
 your own threshold and reject ours.
 
+### One call for a whole company
+
+Most real questions need several of these views at once, and asking for them one at a time is
+five round trips before the agent can start thinking. `/company/{n}/bundle` returns the profile,
+ECCTA compliance, financials, PSCs and directors together, for **one credit instead of five**.
+Pass `include` to take a subset.
+
+The sections are composed from the same handlers that serve them individually, so nothing behaves
+differently in a bundle: same caches, same plan gates, same field shapes. A section comes back
+`null` when it is genuinely unavailable - no machine-readable accounts, or a plan that does not
+include it - and only a missing company is an error. Partial is a normal answer here, not a
+degraded one.
+
 ---
 
 ## ECCTA identity verification
