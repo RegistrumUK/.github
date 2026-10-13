@@ -46,7 +46,7 @@ data before you decide anything. Caps announce themselves; nothing silently degr
 | [**companies-house-api-python-starter**](https://github.com/RegistrumUK/companies-house-api-python-starter) | One-file Python client for the **official free CH API** | You want to call Companies House directly and not fall into the usual four traps |
 | [**companies-house-api-node-starter**](https://github.com/RegistrumUK/companies-house-api-node-starter) | Same, in Node, using built-in `fetch` | As above, on the JS side |
 | [**registrum-mcp-examples**](https://github.com/RegistrumUK/registrum-mcp-examples) | Prompt cookbook + runnable MCP client scripts | You're wiring UK company data into Claude, Cursor, or your own agent |
-| [**@registrum/mcp**](https://github.com/vdmeu/registrum-mcp) | The MCP server itself (npm, MIT) | You want the tools in your agent — hosted (no key) or self-hosted with your own |
+| [**@registrum/mcp**](https://github.com/RegistrumUK/uk-companies-house-mcp) | The MCP server itself (npm, MIT) | You want the tools in your agent — hosted (no key) or self-hosted with your own |
 
 The two starter kits are deliberately **honest wrappers around the free official API**. They
 hide nothing and they don't need us. If the raw register is all you need, use them and go.
@@ -167,7 +167,7 @@ mistake we see in this area, and it is worth getting right whether or not you us
 | **Live contract tests against Companies House, daily** | so an upstream field-shape change surfaces as a red build, not as a customer's bad data |
 | **Circuit breaker + response caching** | upstream degradation doesn't cascade to you |
 | **[Public status page](https://status.registrum.co.uk)** | independently monitored, not self-reported |
-| **Open-source client + examples** | MIT, no obfuscation — the [MCP server](https://github.com/vdmeu/registrum-mcp) is a thin client you can read end to end |
+| **Open-source client + examples** | MIT, no obfuscation — the [MCP server](https://github.com/RegistrumUK/uk-companies-house-mcp) is a thin client you can read end to end |
 
 We are a UK-only, single-jurisdiction API. If you need 30 countries at shallow depth, we are
 the wrong tool and we'd rather say so here than waste your afternoon.
